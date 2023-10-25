@@ -5,4 +5,5 @@ class FriendsApp:
     
     def friendMain(self):
             print("Hola")
+            print("Esto es una prueba")
             

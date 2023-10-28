@@ -5,6 +5,5 @@ class FriendController:
     
     
     
-    
     def FriendController(self):
         pass

@@ -1,2 +1,10 @@
+from model.FriendModel import FriendModel
+from controllers.FriendController import FriendController
+
 class FriendController:
-    pass
+    
+    
+    
+    
+    def FriendController(self):
+        pass

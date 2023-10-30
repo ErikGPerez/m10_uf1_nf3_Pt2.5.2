@@ -7,4 +7,3 @@ class Main:
         app.friendMain()
         
 main = Main()
-

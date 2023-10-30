@@ -26,7 +26,7 @@ class FriendModel:
             entity (Friend): Entity to add
 
         Returns:
-            Int: Return 0 if successfully added, 0 otherwise
+            Int: Return 1 if successfully added, 0 otherwise
         """
         
         
@@ -80,3 +80,6 @@ class FriendModel:
         
         
         return []
+    
+    def __str__(self):
+        return None

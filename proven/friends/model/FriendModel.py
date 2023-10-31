@@ -1,5 +1,3 @@
-from Friend import *
-
 class FriendModel:
     
     def FriendModel(self):

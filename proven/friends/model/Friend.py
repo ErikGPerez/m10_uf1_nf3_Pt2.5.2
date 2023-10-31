@@ -2,32 +2,17 @@ class Friend:
     
     def __init__(self, *args):
         if len(args) == 0: #Empty object
-            self.phone 
-            self.name
-            self.age
-        elif len(args) == 1: #Only name
-            self.phone
-            self.name == args[0]
-            self.age
+            self.phone = None
+            self.name = None
+            self.age = None
+        elif len(args) == 1: #Only phone
+            self.phone = args[0]
+            self.name = None
+            self.age = None
         else: #Default constructor
-            self.phone == args[0]
-            self.name == args[1]
-            self.age == args[2]
-            
-        #Getters/Setters
-    def getName(self):
-        return self.name
-    def getPhone(self):
-        return self.phone
-    def getAge(self):
-        return self.age
-
-    def setName(self, name):
-        self.name = name
-    def setPhone(self, phone):
-        self.phone = phone
-    def setAge(self, age):
-        self.age = age
+            self.phone = args[0]
+            self.name = args[1]
+            self.age = args[2]
            
     def __hash__(self):
         hashCode = 0
@@ -35,12 +20,19 @@ class Friend:
             hashCode = hashCode * 31 + ord(char)
             return hashCode
         
-    def __eq__(self, __value: object) -> bool:
-        pass
+    def __eq__(self, __value) -> bool:
+        if(isinstance(__value, Friend)):
+            if(self.phone == __value.phone):
+                return True
+            else:
+                return False
+        else:
+            return False
+                    
 	
     def __str__(self) -> str:
-        pass
+        return ("Phone = " + str(self.phone) + ", Name = " + str(self.name) + ", Age = " + str(self.age))
     
-    #TODO: Revisar que esté correctamente
+    #Constructor ended
     
-    
+#Test sector

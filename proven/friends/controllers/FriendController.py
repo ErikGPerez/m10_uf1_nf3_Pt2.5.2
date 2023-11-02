@@ -1,11 +1,11 @@
-from ..model.FriendModel import FriendModel
+from model.FriendModel import FriendModel
 #from ..views.FriendView import FriendView
 
 class FriendController:
     
-    def FriendController(self, model):
-        self.model = FriendModel()
-        #self.view = FriendView(self, model)
+    def __init__(self, model):
+        self.model = model
+        #self.view = FriendView(model)
         #view.display()
         
     def exitApplication(self):
@@ -17,5 +17,7 @@ class FriendController:
         #TODO Da errores en el import, y no sé porqué. No puedo avanzar hasta que esté
 
 #Test section
-f = FriendController(fm = FriendModel())
-f.exitApplication()
+
+#f = FriendController(FriendModel())
+#f.exitApplication()
+print("hola")

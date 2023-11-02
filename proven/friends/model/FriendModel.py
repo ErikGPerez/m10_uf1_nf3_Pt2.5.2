@@ -81,3 +81,4 @@ class FriendModel:
     
     def __str__(self):
         return None
+    

@@ -1,9 +1,9 @@
 from model.FriendModel import FriendModel
-#from controllers.FriendController import FriendController
+from controllers.FriendController import FriendController
 
 class FriendsApp:
     
     def friendMain(self):
             model = FriendModel()
-            #control = FriendController(model) TODO
+            control = FriendController(model)
             

@@ -1,6 +1,6 @@
 class FriendModel:
     
-    def FriendModel(self):
+    def __init__(self):
         pass
     
     def find(self, entity):
@@ -79,6 +79,6 @@ class FriendModel:
         
         return []
     
-    def __str__(self):
+    def __str__(self): 
         return None
     

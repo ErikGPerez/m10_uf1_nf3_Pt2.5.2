@@ -5,5 +5,5 @@ class Main:
     def __init__(self):
         app = FriendsApp()
         app.friendMain()
-        
+    
 main = Main()

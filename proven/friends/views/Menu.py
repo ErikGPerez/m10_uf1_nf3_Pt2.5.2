@@ -26,10 +26,10 @@ class Menu:
     def show(self):
         print("=============="+self.title+"================")
         idOption = 0
-        for Option in self.options {
+        for Option in self.options:
             print(Option ": " + idOption)
-            idOption++
-        }
+            idOption = idOption + 1
+
         
     def getSelecOption() -> int:
         """Gets the selected option. If fails, resturns -1

@@ -7,11 +7,10 @@ class FriendController:
     def __init__(self, model: FriendModel):
         self.model = model
         self.view = FriendView(model)
-        view.display()
+        self.view.display()
         
         
     def processRequest(self, action):
-        
 
         if action == None:
             "wrong_action"
@@ -41,78 +40,78 @@ class FriendController:
             """
             data = model.findAll()
             if data != None:
-                view.showFriendTable(data)
+                self.view.showFriendTable(data)
             else:
-                view.showMessage("Error retrieving data")
+                self.view.showMessage("Error retrieving data")
                 
         def searchFriendByPhone(self):
-            phone = view.showInputDialog("Input phone: ")
+            phone = self.view.showInputDialog("Input phone: ")
             if phone != None:
                 friend = Friend(phone)
                 found = model.find(friend)
                 if found != None:
-                    view.friendForm(found)
+                    self.view.friendForm(found)
                 else:
-                    view.showMessage("Friend not found")
+                    self.view.showMessage("Friend not found")
             else:
-                view.showMessage("Error in parameter phone")
+                self.view.showMessage("Error in parameter phone")
         
         def searchFriendsByName(self):
-            name = view.showInputDialog("Input phone: ")
+            name = self.view.showInputDialog("Input phone: ")
             if name == None:
-                data = model.findFriendsByName(name)
+                data = self.model.findFriendsByName(name)
                 if data != None:
-                    view.showFriendTable(data)
+                    self.view.showFriendTable(data)
                 else:
-                    view.showMesssage("Error searching Friends")
+                    self.view.showMesssage("Error searching Friends")
             else:
-                view.showMessage("Error in parameter name")
+                self.view.showMessage("Error in parameter name")
         
         def addFriend(self):
-            friend = view.friendForm(None)
+            friend = self.view.friendForm(None)
             if friend != None:
-                result = model.add(friend)
+                result = self.model.add(friend)
                 if result > 0:
-                    view.showMessage("Friend succesfully added")
+                    self.view.showMessage("Friend succesfully added")
                 else:
-                    view.showMessage("Friend has not been added")
+                    self.view.showMessage("Friend has not been added")
             else:
-                view.showMessage("Error in parameters")
+                self.view.showMessage("Error in parameters")
         
         def modifyFriend(self, oldVersion, newVersion):
-            result = model.modify(oldVersion, newVersion)
+            result = self.model.modify(oldVersion, newVersion)
             if (result > 0):
-                view.showMessage("Friend succesfully modified")
+                self.view.showMessage("Friend succesfully modified")
             else:
-                view.showMessage("Friend has not been modified")
+                self.view.showMessage("Friend has not been modified")
         
         def removeFriend(self, friend):
-            result = model.remove(friend)
+            result = self.model.remove(friend)
             if result > 0:
-                view.showMessage("Friend succesfully removed")
+                self.view.showMessage("Friend succesfully removed")
             else:
-                view.showMessage("Friend has not been removed")
+                self.view.showMessage("Friend has not been removed")
                 
         def modifyFriendForm(self):
-            phone = view.inputDialog("Input phone: ")
+            phone = self.view.inputDialog("Input phone: ")
             if phone != None:
                 friend = Friend(phone)
-                found = model.find(friend)
+                found = self.model.find(friend)
                 if found != None:
-                    newFriend = view.friendForm(found)
+                    newFriend = self.view.friendForm(found)
                     modifyFriend(friend, newFriend)
                 else:
-                    view.showMessage("Friend not found")
+                    self.view.showMessage("Friend not found")
         
         def removeFriendForm(self):
-            phone = view.showInputDialog("Input phone: ")
+            phone = self.view.showInputDialog("Input phone: ")
             if phone != None:
                 friend = Friend(phone)
-                found = model.find(friend)
+                found = self.model.find(friend)
                 if found != None:
                     removeFriend(friend)
                 else:
-                    view.showMessage("Friend not found")
+                    self.view.showMessage("Friend not found")
 
 #Test section
 

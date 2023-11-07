@@ -12,9 +12,13 @@ class Option:
         return result
     
     def __eq__(self, __value: object) -> bool:
-        pass #TODO
+        if(isinstance(__value, Option)):
+            if(self.text == __value.text and self.actionCommand == __value.actionCommand):
+                return True
+            else:
+                return False
+        else:
+            return False
     
     def __str__(self) -> str:
-        pass #TODO
-    
-    #TODO
+        return ("Phone = " + str(self.text) + ", Name = " + str(self.actionCommand))

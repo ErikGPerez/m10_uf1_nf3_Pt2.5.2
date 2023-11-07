@@ -32,7 +32,3 @@ class Friend:
 	
     def __str__(self) -> str:
         return ("Phone = " + str(self.phone) + ", Name = " + str(self.name) + ", Age = " + str(self.age))
-    
-    #Constructor ended
-    
-#Test sector

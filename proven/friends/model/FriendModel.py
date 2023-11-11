@@ -1,7 +1,9 @@
+from model.Friend import Friend
+
 class FriendModel:
-    
+
     def __init__(self):
-        pass
+        self.listFriends = list()
     
     def find(self, entity):
         """Finds a friend in data source 
@@ -13,9 +15,12 @@ class FriendModel:
         Returns:
             Friend:  Return the friend found or null if not found
         """
-        
-        
-        return None
+        if entity != None:
+            for Friend in self.listFriends:
+                if Friend == entity:
+                    return Friend
+        else:
+            return None
     
     def add(self, entity):
         """ Adds a new friend to the data source
@@ -26,9 +31,12 @@ class FriendModel:
         Returns:
             Int: Return 1 if successfully added, 0 otherwise
         """
-        
-        
-        return 0
+        if entity != None:
+            self.listFriends.append(entity)
+            opt = 1
+        else:
+            opt = 0
+        return opt
     
     def modify(self, oldEntity, newEntity):
         """ Modifies the Friend entity
@@ -40,9 +48,15 @@ class FriendModel:
         Returns:
             int: Retruns 1 if successfully modified, 0 otherwise
         """
-        
-        
-        return 0
+        opt = 0
+        cont = 0
+        if oldEntity != None:
+            for Friend in self.listFriends:
+                if Friend == oldEntity:
+                    self.listFriends[cont] = newEntity
+                    opt = 1
+                cont += 1
+        return opt
     
     def remove(self, entity):
         """ Removes a friend entity choosen of the data source
@@ -53,9 +67,15 @@ class FriendModel:
         Returns:
             Int: 1 if succesfully removed, 0 otherwise
         """
-        
-        
-        return 0
+        if entity != None:
+            try:
+                self.listFriends.remove(entity)
+                opt = 1
+            except:
+                opt = 0
+        else:
+            opt = 0
+        return opt
     
     def findAll(self):
         """ Gets all friends from the data source
@@ -64,9 +84,9 @@ class FriendModel:
             List<Friend>: A list with all data or an empty list if none is found
         """
         
-        return []
+        return self.listFriends
     
-    def findFriendsNyName(self, name):
+    def findFriendsByName(self, name):
         """ Gets a friend from data source by its name
 
         Args:
@@ -75,10 +95,13 @@ class FriendModel:
         Returns:
             List<Friend>: A list of friends by its name, an empty list otherwise
         """
-        
-        
-        return []
+        listNameFriends = list()
+        if name != None:
+            for Friend in self.listFriends:
+                if Friend.name == name:
+                    listNameFriends.append(Friend)
+        return listNameFriends
     
     def __str__(self): 
-        return None
+        return None 
     

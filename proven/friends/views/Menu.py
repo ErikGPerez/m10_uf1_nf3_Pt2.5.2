@@ -1,37 +1,32 @@
 class Menu:
-    
-    def __init__(self, title):
+    def __init__(self, title: str):
         self.title = title
         self.options = list()
-                
-    def Menu(self):
+
+    def reset(self):
         self.title = None
         self.options = list()
-        
+
     def getOption(self, index):
         return self.options.get(index)
-    
-    def addOption(self, option) -> bool:
-        return self.options.add(option)
-    
-    def removeOption(self, option):
-        return self.options.remove(option)
-    
-    def removeOption(self, index):
-        return self.options.remove(index)
-    
+
+    def addOption(self, Option) -> bool:
+        return self.options.append(Option)
+
+    def removeOption(self, Option):
+        return self.options.remove(Option)
+
     def __str__(self) -> str:
         return ("Title = " + str(self.title) + ", Options = " + str(self.options))
-    
+
     def show(self):
         print("=============="+self.title+"================")
         idOption = 0
         for Option in self.options:
-            print(Option ": " + idOption)
-            idOption = idOption + 1
-
+            print(str(Option) + ": " + str(idOption))
+            idOption += 1
         
-    def getSelecOption() -> int:
+    def getSelectedOption(self) -> int:
         """Gets the selected option. If fails, resturns -1
 
         Returns:
@@ -40,15 +35,19 @@ class Menu:
         opt = -1
         try:
             print("Select an Option: ")
-            opt = input()
-            if opt < 0 or opt >= Menu.options.len():
+            opt = int(input())
+            if opt < 0 or opt >= len(self.options):
                 opt = -1
         except :
+            print("Mal")
             opt = -1
+        return opt
     
-    def getSelectedOptionActionCommand():
-        optionNumber = Menu.getSelectedOption()
+    def getSelectedOptionActionCommand(self):
+        optionNumber = self.getSelectedOption()
         actionCommand = None
-        if optionNumber >= 0 and optionNumber < Menu.options.len():
-            actionCommand = Menu.options.get(optionNumber).getActionCommand()
+        if optionNumber >= 0 and optionNumber < len(self.options):
+            actionCommand = self.options[optionNumber].actionCommand
+        else:
+            actionCommand = "wrong_option"
         return actionCommand

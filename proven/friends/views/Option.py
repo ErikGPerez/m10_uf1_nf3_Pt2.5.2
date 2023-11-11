@@ -21,4 +21,4 @@ class Option:
             return False
     
     def __str__(self) -> str:
-        return ("Phone = " + str(self.text) + ", Name = " + str(self.actionCommand))
+        return (str(self.text))

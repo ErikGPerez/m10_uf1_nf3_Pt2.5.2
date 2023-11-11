@@ -1,10 +1,10 @@
-from proven.friends.controllers.FriendController import FriendController
-from proven.friends.model.FriendModel import *
-from proven.friends.model.Friend import *
-import FriendMenu
+from controllers.FriendController import *
+from model.FriendModel import *
+from model.Friend import *
+from views.FriendMenu import FriendMenu
 
 class FriendView:
-    def __init__(self, control: FriendController, model: FriendModel):
+    def __init__(self, control, model):
         self.control = control
         self.model = model
         self.menu = FriendMenu()
@@ -19,6 +19,9 @@ class FriendView:
     def display(self):
         while True:
             self.menu.show()
+            action = self.menu.getSelectedOptionActionCommand()
+            self.processAction(action)
+            
             
     def processAction(self, action):
         if action != None:
@@ -30,4 +33,22 @@ class FriendView:
         for Friend in data:
             print(Friend)
             cont = cont + 1
-        print(cont + "Elements found. " + data.len())
+        print(str(cont) + " Elements found. " + str(len(data)))
+        
+    def friendForm(self, inputF: Friend):
+        if inputF != None:
+            print(inputF)
+        else:
+            try:
+                print("Input new phone: ")
+                phone = input()
+                print("Input new name: ")
+                name = input()
+                print("Input new age: ")
+                age = input()
+                age = int(age)
+                inputF = Friend(phone, name, age)
+            except:
+                print("Error retriving data")
+                inputF = None
+        return inputF

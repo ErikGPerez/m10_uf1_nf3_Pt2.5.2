@@ -49,5 +49,5 @@ class Menu:
         if optionNumber >= 0 and optionNumber < len(self.options):
             actionCommand = self.options[optionNumber].actionCommand
         else:
-            actionCommand = "wrong_option"
+            actionCommand = "wrong_action"
         return actionCommand

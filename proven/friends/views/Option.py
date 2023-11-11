@@ -1,4 +1,3 @@
-
 class Option:
     def __init__(self, text, actionCommand):
         self.text = text

@@ -1,6 +1,6 @@
-from model.FriendModel import FriendModel
-from views.FriendView import FriendView
-from model.Friend import Friend
+from proven.friends.model.FriendModel import FriendModel
+from proven.friends.views.FriendView import FriendView
+from proven.friends.model.Friend import Friend
 
 class FriendController:
     
@@ -8,7 +8,6 @@ class FriendController:
         self.model = model
         self.view = FriendView(self, self.model)
         self.view.display()
-        
         
     def processRequest(self, action):
 

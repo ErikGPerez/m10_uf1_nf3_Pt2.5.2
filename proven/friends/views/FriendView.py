@@ -1,7 +1,7 @@
-from controllers.FriendController import *
-from model.FriendModel import *
-from model.Friend import *
-from views.FriendMenu import FriendMenu
+from proven.friends.controllers.FriendController import *
+from proven.friends.model.FriendModel import *
+from proven.friends.model.Friend import *
+from proven.friends.views.FriendMenu import FriendMenu
 
 class FriendView:
     def __init__(self, control, model):

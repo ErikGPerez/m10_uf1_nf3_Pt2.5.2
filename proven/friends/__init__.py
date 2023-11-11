@@ -1,4 +1,4 @@
-from FriendsApp import FriendsApp
+from proven.friends.FriendsApp import FriendsApp
 
 ##Init main to run programm
 class Main:

@@ -1,5 +1,5 @@
-from views.Option import Option
-from views.Menu import Menu
+from proven.friends.views.Option import Option
+from proven.friends.views.Menu import Menu
 
 
 class FriendMenu(Menu):

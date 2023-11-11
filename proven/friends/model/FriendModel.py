@@ -1,4 +1,4 @@
-from model.Friend import Friend
+from proven.friends.model.Friend import Friend
 
 class FriendModel:
 

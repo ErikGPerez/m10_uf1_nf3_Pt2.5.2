@@ -1,5 +1,5 @@
-from model.FriendModel import FriendModel
-from controllers.FriendController import FriendController
+from proven.friends.model.FriendModel import FriendModel
+from proven.friends.controllers.FriendController import FriendController
 
 class FriendsApp:
     
